@@ -1,0 +1,26 @@
+{
+   "name": "Serieaball",
+   "short_name": "Serieaball",
+   "lang": "en",
+   "description": "Aplikasi Informasi Sepak Bola Liga Serie-A Italia",
+   "scope": "/",
+   "start_url": "/index.html",
+   "display": "standalone",
+   "background_color": "#fff",
+   "theme_color": "#00897B",
+   "icons": [
+      {
+         "src": "./assets/images/android-icon-192x192.png",
+         "sizes": "192x192",
+         "type": "image/png",
+         "purpose": "any maskable"
+      },
+      {
+         "src": "./assets/images/icon_512x512.png",
+         "sizes": "512x512",
+         "type": "image/png",
+         "purpose": "any maskable"
+      }
+   ],
+   "gcm_sender_id": "839981808457"
+}

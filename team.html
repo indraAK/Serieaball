@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="theme-color" content="#00897B" />
+   <!--Import Google Icon Font, materialize.css, style.css, manifest.json & more-->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+   <link rel="stylesheet" href="./assets/css/style.css">
+   <link rel="manifest" href="./manifest.json">
+   <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+   <link rel="apple-touch-icon" href="./assets/images/apple-icon.png">
+   <title>Serieaball | Informasi Sepak Bola Liga Serie-A</title>
+</head>
+
+<body>
+
+   <!-- Header top -->
+   <header class="header navbar-fixed">
+      <nav class="header__nav">
+         <div class="container">
+            <div class="nav-wrapper start">
+               <a href="./index.html#clubs" class="icon-back" id="btnBack">
+                  <i class="material-icons">arrow_back</i>
+               </a>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <!-- main content -->
+   <main class="main-content">
+      <section class="detail-club" id="detailClub"></section>
+   </main>
+
+   <!-- Icon Fixed Bottom -->
+   <div class="favorite-icon">
+      <i class="material-icons" data-target="favorite" id="btnFavorite">favorite</i>
+   </div>
+
+   <script src="./assets/js/materialize.min.js"></script>
+   <script src="./assets/js/api.js"></script>
+   <script src="./assets/js/idb.js"></script>
+   <script src="./assets/js/db.js"></script>
+   <script src="./assets/js/notification.js"></script>
+   <script src="./assets/js/script.js"></script>
+   <script>
+      // Request API untuk pertama kali
+      document.addEventListener('DOMContentLoaded', (e) => {
+         const urlParams = new URLSearchParams(window.location.search);
+         const idTeam = urlParams.get('id');
+         const isFromFavorite = urlParams.get('favorite');
+         const btnFavorite = document.getElementById('btnFavorite');
+         const btnBack = document.getElementById('btnBack');
+
+         // periksa apakah parameter urlnya terdapat string favorite?
+         if (isFromFavorite) {
+            // sembunyikan icon favorite
+            btnFavorite.parentElement.style.display = 'none';
+            // set attribute href dari btn back
+            btnBack.setAttribute('href', './index.html#favorite');
+
+            getTeamById();
+         } else {
+            // fungsi untuk mendapatkan team dari indexed DB & team dari API
+            const getTeam = async () => {
+               const teamFromFav = await getById(idTeam); // get team by id dari indexed DB
+               const teamFromApi = await getTeamById(); // get team by id dari API
+
+               // cek apakah team telah di add ke favorite?
+               if (teamFromFav != undefined) {
+                  // ubah warna icon fav menjadi merah jika team tersebut telah di add ke favorite
+                  btnFavorite.parentElement.className = 'favorite-icon success';
+               } else {
+                  btnFavorite.parentElement.className = 'favorite-icon';
+               }
+
+               // tambahkan event listener untuk button icon fav
+               btnFavorite.addEventListener('click', event => {
+                  if (teamFromFav != undefined) {
+                     M.toast({ html: `<span class="toast-warning">${teamFromFav.name} sudah di tambahkan ke favorite!</span>` });
+                  } else {
+                     addToFavorite(teamFromApi);
+                  }
+               });
+            }
+
+            // panggil fungsi getTeam
+            getTeam();
+         }
+      });
+   </script>
+</body>
+
+</html>

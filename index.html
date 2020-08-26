@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="theme-color" content="#00897B" />
+   <!--Import Google Icon Font, materialize.css, style.css, manifest.json & more-->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+   <link rel="stylesheet" href="./assets/css/style.css">
+   <link rel="manifest" href="./manifest.json">
+   <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+   <link rel="apple-touch-icon" href="./assets/images/apple-icon.png">
+   <title>Serieaball | Informasi Sepak Bola Liga Serie-A</title>
+</head>
+
+<body>
+
+   <!-- Header top -->
+   <header class="header">
+      <nav class="header__nav">
+         <div class="container">
+            <div class="nav-wrapper">
+               <a href="#" class="header__logo">
+                  <img src="./assets/images/logo.png" alt="logo" class="header__logo-img">
+               </a>
+               <ul id="nav-mobile" class="right hide-on-med-and-down header__nav-right">
+                  <li><a href="#home" class="header__nav-link nav-link active">Home</a></li>
+                  <li><a href="#clubs" class="header__nav-link nav-link">Clubs</a></li>
+                  <li><a href="#favorite" class="header__nav-link nav-link">Favorite</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <!-- main content -->
+   <main class="main-content"></main>
+
+   <!-- Nav Bottom (akan tampil ketika di device smartphone) -->
+   <div class="bottom-nav">
+      <ul class="bottom-nav__list">
+         <li class="bottom-nav__item">
+            <a href="#home" class="bottom-nav__link nav-link active">
+               <i class="material-icons" data-target="home">home</i>
+               <h4 data-target="home">Home</h4>
+            </a>
+         </li>
+         <li class="bottom-nav__item">
+            <a href="#clubs" class="bottom-nav__link nav-link">
+               <i class="material-icons" data-target="clubs">group</i>
+               <h4 data-target="clubs">Clubs</h4>
+            </a>
+         </li>
+         <li class="bottom-nav__item">
+            <a href="#favorite" class="bottom-nav__link nav-link">
+               <i class="material-icons" data-target="favorite">favorite</i>
+               <h4 data-target="favorite">Favorite</h4>
+            </a>
+         </li>
+      </ul>
+   </div>
+   <!-- akhir dari nav bottom -->
+
+   <script src="./assets/js/materialize.min.js"></script>
+   <script src="./assets/js/nav.js"></script>
+   <script src="./assets/js/api.js"></script>
+   <script src="./assets/js/idb.js"></script>
+   <script src="./assets/js/db.js"></script>
+   <script src="./assets/js/notification.js"></script>
+   <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
