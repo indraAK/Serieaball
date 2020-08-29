@@ -21,3 +21,6 @@ Serieaball adalah sebuah aplikasi web yang berbasis PWA (Progressive Web Apps) y
   <li>Responsive layout / Tampilan responsive di semua device</li>
   <li>bisa di add to home screen</li>
 </ul>
+
+<h2>Live Preview</h2>
+<a href="https://serieaball.web.app/">Serieaball</a>
