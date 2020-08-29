@@ -3,7 +3,7 @@
 Serieaball adalah sebuah aplikasi web yang berbasis PWA (Progressive Web Apps) yang menyediakan seputar informasi sepakbola mengenai Liga Seriea-A Italia mulai dari informasi jadwal pertandingan, klasemen liga, dan team/club.
 <br>
 
-<h2>Serieall dibuat dengan menggunakan:</h2>
+<h2>Serieaball dibuat dengan menggunakan:</h2>
 <ul>
   <li>HTML</li>
   <li>CSS (Materialize)</li>
